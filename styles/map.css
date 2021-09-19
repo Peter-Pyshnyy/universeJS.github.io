@@ -9,6 +9,6 @@
   display: inline-block;
   border-radius: 50%;
   background-color: white;
-  box-shadow: 0 0 20px yellow;
+  box-shadow: 0 0 20px red;
   filter: blur(2px);
 }

@@ -8,12 +8,9 @@ function starGenerator() {
   let size = Math.floor(Math.random() * 5) + 6 + "px";
   let star = {
     html: document.createElement("div"),
-    description: `solar system name
-owner:
-plantes:
-live forms:
-    `,
+    description: descriptionGenerator(),
   };
+
   starsArray.push(star);
   star.html.setAttribute("id", starsArray.length - 1);
   star.html.setAttribute("class", "star");
@@ -29,11 +26,21 @@ for (let i = 0; i < amountOfStars; i++) {
 }
 
 document.addEventListener("click", (e) => {
-  e.target.id < amountOfStars ? alert(starsArray[e.target.id].description) : null;
+  e.target.id < amountOfStars + 1 ? console.log(starsArray[e.target.id]) : null;
+  //console.log(JSON.parse(localStorage.stars));
 });
 
-starsArray[0].description = `alex system
-owner: Petya
-plantes: 6
-live forms: none
-    `;
+function descriptionGenerator(star) {
+  return {
+    name: `System ${String.fromCharCode(Math.floor(Math.random() * 25) + 65) + "-" + Math.floor(Math.random() * 99)}`,
+    owner: "No Owner",
+    planets: Math.floor(Math.random() * 7) + 2,
+    liveForms: Math.random() < 0.3 ? "Exist" : "None",
+  };
+}
+
+starsArray.map((element) => {
+  element.description = descriptionGenerator();
+});
+
+//change to class
