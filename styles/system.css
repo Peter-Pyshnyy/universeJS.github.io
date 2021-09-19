@@ -1,0 +1,24 @@
+.s-system {
+  width: 700px;
+  height: 400px;
+  justify-content: center;
+  outline: #222 8px solid;
+  background: url(../img/solar-system.png);
+  overflow: hidden;
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.planet {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(0%, -50%);
+  display: block;
+  box-shadow: -1px 0px rgb(151, 139, 121), 0px 0px 5px blanchedalmond;
+}
