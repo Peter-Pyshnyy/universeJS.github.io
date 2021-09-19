@@ -1,3 +1,5 @@
+import { createSystemWindow } from "./system-script.js";
+
 let starsArray = [];
 let amountOfStars = 30;
 
@@ -26,8 +28,13 @@ for (let i = 0; i < amountOfStars; i++) {
 }
 
 document.addEventListener("click", (e) => {
-  e.target.id < amountOfStars + 1 ? console.log(starsArray[e.target.id]) : null;
-  //console.log(JSON.parse(localStorage.stars));
+  //e.target.className == "star" ? console.log(starsArray[e.target.id]) : null;
+  //e.target.className == "star" ? createSystemWindow() : null;
+  if (e.target.className == "star") {
+    let sst = document.getElementById("s-system");
+    sst ? sst.remove() : null;
+    createSystemWindow();
+  }
 });
 
 function descriptionGenerator(star) {

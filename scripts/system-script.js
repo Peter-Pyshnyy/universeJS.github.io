@@ -89,16 +89,18 @@ function createSystemBG() {
   map.appendChild(sbg);
 }
 
+//creates a window with the solar system
 function createSystemWindow() {
+  planets = [];
   createSystemBG();
   for (let i = 0; i < 8; i++) {
     planetGenerator();
   }
 }
 
-createSystemWindow();
-
 //show planet info
 document.addEventListener("click", (e) => {
   if (e.target.className == "planet") console.log(planets[e.target.id - 1]);
 });
+
+export { createSystemWindow };
